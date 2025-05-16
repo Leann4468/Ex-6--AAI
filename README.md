@@ -1,36 +1,39 @@
-<H1>Implementation of Semantic Analysis</H1>
-<H3>NAME: LEANN JOBY MATHEW</H3>
-<H3>REGISTER NO: 212222230074</H3>
-<H3>EX. NO.6</H3>
-<H3>DATE:</H3>
-<H3>Aim:  </H3>  To perform Parts of speech identification and Synonym using Natural Language Processing (NLP) techniques.
-<h3>Algorithm:</h3>
 
-1. Import the nltk library.
-2. Download the 'punkt', 'wordnet', and 'averaged_perceptron_tagger' resources.
-3. Accept user input for the text.
-4. Tokenize the input text into words using the word_tokenize function.
-5. Iterate through each word in the tokenized text.
-   - Perform part-of-speech tagging on the tokenized words using nltk.pos_tag.<br>
-   - Print each word along with its corresponding part-of-speech tag.<br>
-   - For each verb , iterate through its synsets (sets of synonyms) using wordnet.synsets(word).<br>
-   - Extract synonyms and antonyms using lemma.name() and lemma.antonyms()[0].name() respectively.<br>
-   - Print the unique sets of synonyms and antonyms.
+<H1 ALIGN =CENTER>Implementation of Semantic Analysis</H1>
+
+ ### Aim: 
+ To perform Parts of speech identification and Synonym using Natural Language Processing (NLP) techniques. 
+ <BR>
+<h3>Algorithm:</h3>
+Step 1: Import the nltk library.<br>
+Step 2: Download the 'punkt', 'wordnet', and 'averaged_perceptron_tagger' resources.<br>
+Step 3:Accept user input for the text.<br>
+Step 4:Tokenize the input text into words using the word_tokenize function.<br>
+Step 5:Iterate through each word in the tokenized text.<br>
+•	Perform part-of-speech tagging on the tokenized words using nltk.pos_tag.<br>
+•	Print each word along with its corresponding part-of-speech tag.<br>
+•	For each verb , iterate through its synsets (sets of synonyms) using wordnet.synsets(word).<br>
+•	Extract synonyms and antonyms using lemma.name() and lemma.antonyms()[0].name() respectively.<br>
+•	Print the unique sets of synonyms and antonyms.
 
 <H3>Program:</H3>
 
 ```py
-!pip install nltk
+DEVELOPED BY : LEANN JOBY MATHEW
+REGISTER NO : 212222230074
+```
 
+```py
+#importing packages
+! pip install nltk
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
-
-
-f = open("/content/sample_data.txt", "r")
+#reading content from file
+f = open("/content/ex6.txt", "r")
 sentences = f.readlines()
 f.close()
 verbs = [[] for _ in sentences]
@@ -52,9 +55,8 @@ for sentence in sentences:
     if tag.startswith('VB'):
       verbs[i].append(word)
   i+=1
-  print("\n\n") 
-
-# Identify synonyms and antonyms for each word
+  print("\n\n")
+  # Identify synonyms and antonyms for each word
 print("Synonyms and Antonymns for verbs in each sentence:\n")
 i=0
 for sentence in sentences:
@@ -79,12 +81,14 @@ for sentence in sentences:
   i+=1
 ```
 
-<H3>Output</H3>
-<h4>Words and the respective POS-Tags </h4>
+<H3>Output :</H3>
 
-![image](https://github.com/user-attachments/assets/1f5bf75a-4ca0-4ee5-9908-ce4f40f25dd6)
-<h4>Synonyms and Antonyms for verbs in each sentence</h4>
+### Sample Sentence from 'ex6.txt' :
+### Words and the respective POS-Tags :
+![image](https://github.com/22002102/Ex-6--AAI/assets/119091638/8aa06a74-0e12-49d3-a82a-73c0a4278ac2)
 
-![image](https://github.com/user-attachments/assets/90bbbb0b-5c94-4089-a94a-73a3f816604d)
+### Synonyms and Antonyms for verbs in each sentence :
+![image](https://github.com/22002102/Ex-6--AAI/assets/119091638/797f781f-11ab-4a23-8167-6b1fe63c7719)
+
 <H3>Result:</H3>
-Thus, the program to perform the Parts of Speech identification and Synonymis was executed successfully.
+Thus ,the program to perform the Parts of Speech identification and Synonymis executed sucessfully.
